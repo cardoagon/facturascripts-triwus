@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts Triwus plugin
+ *
+ * @author Raúl Jiménez       <raljopa@gmail.com>
+ *
+ * @description Table data for triwus products catalog
+-->
+<table>
+    <column>
+        <name>idproduct</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>twid</name>
+        <type>integer</type>
+        <null>YES</null>
+    </column>
+    <column>
+        <name>name</name>
+        <type>text</type>
+        <null>YES</null>
+    </column>
+    <column>
+        <name>description</name>
+        <type>text</type>
+        <null>YES</null>
+    </column>
+
+     <column>
+        <name>price</name>
+        <type>double</type>
+        <null>YES</null>
+    </column>
+
+    <constraint>
+        <name>idproduct_pkey</name>
+        <type>PRIMARY KEY (idproduct)</type>
+    </constraint>
+</table>

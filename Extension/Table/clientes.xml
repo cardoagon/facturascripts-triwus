@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts Triwus plugin
+ *
+ * @author Raúl Jiménez     <raljopa@gmail.com>
+ * 
+ * @description new fields for client data
+-->
+<table>
+    <column>
+        <name>twid</name>
+        <type>integer</type>
+        <null>YES</null>
+        <default>0</default>
+    </column>
+</table>

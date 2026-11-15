@@ -1,0 +1,19 @@
+<!--
+ * This file is part of FacturaScripts Triwus plugin
+ *
+ * @author Raúl Jiménez       <raljopa@gmail.com>
+ *
+ * @description add field to EditProducto
+-->
+<view>
+    <columns>
+        <group name="Triwuscommece" numcolumns="12" title="Triwus-ecommerce">
+
+            <column name="twproduct" description="tw-product" title="tw-product" numcolumns="6" order="100">
+                <widget type="autocomplete" fieldname="twid">
+                    <values source="twproducts" fieldcode="twid" fieldtitle="name"/>
+                </widget>
+            </column>
+        </group>
+    </columns>
+</view>

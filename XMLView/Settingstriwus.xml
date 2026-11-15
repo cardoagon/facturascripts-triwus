@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts Triwus plugin
+ *
+ * @author Raúl Jiménez  <raljopa@gmail.com>
+ * 
+ * @description fields to Settings view for Triwus configuration
+-->
+<view>
+    <columns>
+        <group name="Triwus" title="triwus-params" numcolumns="12" order="100"  icon="fas fa-globe">
+            <column name="name" order="0" display="none">
+                <widget type="text" fieldname="name" readonly="true" required="true"/>
+            </column>
+            <column name="url" order="110" numcolumns="4">
+                <widget type="text" fieldname="urltriwus" required="true"/>
+            </column>
+            <column name="clientkey" order="120" numcolumns="4">
+                <widget type="text" fieldname="twclienteapikey" required="true"/>
+            </column>
+            <column name="secretkey" order="130" numcolumns="4">
+                <widget type="password" fieldname="twsecretapikey" required="true"/>
+            </column>
+            <column name="codserie" title="tw-codserie" order="140" numcolumns="3">
+               <widget type="select" fieldname="codserie" onclick="EditSerie" required="true">
+                    <values source="series" fieldcode="codserie" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="defaultorderstate" title="tw-orderstate" order="145" numcolumns="3">
+               <widget type="select" fieldname="defaultorderstate"  required="true">
+                    <values source="estados_documentos" fieldcode="idestado" fieldtitle="nombre"/>
+                </widget>
+            </column>
+            <column name="codalmacen" title="tw-codalmacen" order="150" numcolumns="3">
+               <widget type="select" fieldname="codalmacen" onclick="EditAlmacen" required="true">
+                    <values source="almacenes" fieldcode="codalmacen" fieldtitle="nombre"/>
+                </widget>
+            </column>
+            <column name="codgrupo" title="tw-client-group" order="160" numcolumns="3">
+               <widget type="select" fieldname="codgrupo" >
+                    <values source="gruposclientes" fieldcode="codgrupo" fieldtitle="nombre"/>
+                </widget>
+            </column>
+            <column name="codtarifa" title="tw-tariff" order="170" numcolumns="3">
+               <widget type="select" fieldname="codtarifa" >
+                    <values source="tarifas" fieldcode="codtarifa" fieldtitle="nombre"/>
+                </widget>
+            </column>
+            <column name="codcliente" title="tw-client" description="default-client" order="170" numcolumns="3">
+               <widget type="autocomplete" fieldname="codcliente" required="true" >
+                    <values source="clientes" fieldcode="codcliente" fieldtitle="nombre"/>
+                </widget>
+            </column>
+            <column name="idportes" title="tw-transport-product-code" order="180" numcolumns="4">
+               <widget type="autocomplete" fieldname="idproducto" required="true" >
+                    <values source="productos" fieldcode="idproducto" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+             <column name="iva-incluido" title="tw-tax-included" description="tw-tax-included-description" order="190" numcolumns="3">
+                <widget type="checkbox" fieldname="pricetaxincluded" />
+            </column>
+            <column name="cron-activo" title="tw-active-cron" description="Importar pedidos automáticamente (Cron)" order="200" numcolumns="3">
+                <widget type="checkbox" fieldname="activecron" />
+            </column>
+            <column name="fechaultimopedido" title="tw-last-date" description="Y-m-d " order="210" numcolumns="3">
+                <widget type="date" fieldname="fechaultimopedido" />
+            </column>
+            <column name="productupdated" title="tw-last-product-date" description="Y-m-d " order="220" numcolumns="3">
+                <widget type="date" fieldname="productlastupdate" />
+            </column>
+        </group>
+        <group name="Pagos" title="triwus-payments" numcolumns="12" order="100">
+            <column name="codpagopaypal" title="tw-paypal" description="tw-paypal-description" order="100" numcolumns="3">
+               <widget type="select" fieldname="codpaypal" onclick="EditFormaPago">
+                    <values source="formaspago" fieldcode="codpago" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="codpagocredito" title="tw-credito" description="tw-credito-description" order="110" numcolumns="3">
+               <widget type="select" fieldname="codcredito" onclick="EditFormaPago" >
+                    <values source="formaspago" fieldcode="codpago" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="codpagotransferencia" title="tw-transferencia" description="tw-transferencia-description" order="120" numcolumns="3">
+               <widget type="select" fieldname="codtransferencia" onclick="EditFormaPago" >
+                    <values source="formaspago" fieldcode="codpago" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="codpagoefectivo" title="tw-efectivo" description="tw-efectivo-description" order="130" numcolumns="3">
+               <widget type="select" fieldname="codefectivo" onclick="EditFormaPago" >
+                    <values source="formaspago" fieldcode="codpago" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="codpagobizum" title="tw-bizum" description="tw-bizum-description" order="140" numcolumns="3">
+               <widget type="select" fieldname="codbizum" onclick="EditFormaPago" >
+                    <values source="formaspago" fieldcode="codpago" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="codpagoreembolso" title="tw-reembolso" description="tw-reembolso-description" order="150" numcolumns="3">
+               <widget type="select" fieldname="codreembolso" onclick="EditFormaPago" >
+                    <values source="formaspago" fieldcode="codpago" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="idreembolso" title="tw-reembolso-product-code" description="tw-reembolso-product-code-description" order="160" numcolumns="4">
+               <widget type="autocomplete" fieldname="idproductoreembolso" >
+                    <values source="productos" fieldcode="idproducto" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+        </group>
+            
+    </columns>
+</view>

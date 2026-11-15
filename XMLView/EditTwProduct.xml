@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts Triwus plugin
+ *
+ * @author Raúl Jiménez       <raljopa@gmail.com>
+ * 
+ * @description fields to EditTwProduct view
+-->
+<view>
+    <columns>
+        <column name="code"  order="100" numcolumns="2" display="none">
+            <widget type="text" fieldname="idproduct" readonly="true" />
+        </column>
+        <column name="cod. Triwus"  order="105" numcolumns="2">
+            <widget type="text" fieldname="twid" readonly="true" />
+        </column>
+        <column name="name" order="110" numcolumns="4">
+            <widget type="text" fieldname="name" readonly="true"/>
+        </column>
+        <column name="price" order="130" numcolumns="2">
+            <widget type="number" fieldname="price" readonly="true"/>
+        </column>
+        <column name="description" order="120" numcolumns="12">
+            <widget type="textarea" fieldname="description" readonly="true"/>
+        </column>
+        
+    </columns>
+    
+</view>
+
